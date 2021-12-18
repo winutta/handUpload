@@ -84,11 +84,11 @@ void main() {
   vec3 envMapColorRefr = getEnvMap(refrDir,envMapClear).rgb;
   vec3 envMapColor = mix(envMapColorClear.rgb,envMapColorBlur.rgb,1.);
 
-  float envMapBrightness = length(envMapColorBlur);
+  // float envMapBrightness = length(envMapColorBlur);
 
   /////////Original 
-  // col = mix(col,envMapColorBlur*5.,0.5);
-  // col += pow(b2,4.)*fade* red;
+  col = mix(col,envMapColorBlur*5.,0.5);
+  col += pow(b2,1.)*fade* red;
   /////////
 
   // col = mix(col,vec3(envMapBrightness)*5.*vec3(0.,0.2,0.8),0.5);
@@ -100,7 +100,7 @@ void main() {
   // col = envMapColorRefr*5.;
 
 
-  col = irrN*peach;
+  // col = irrN*peach;
   // col += pow(b,1.)*fade* vec3(166.,16.,30.)/255.;
   // col = mix(col, envMapColor*1.,5.);
   // col = envMapColorIrr;
